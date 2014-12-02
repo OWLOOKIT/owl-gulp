@@ -1,0 +1,45 @@
+// Asymmetric grids with Susy 
+// http://www.zell-weekeat.com/asymmetric-grids-with-susy
+
+@import vendor/susy/_susy.scss
+
+//$susy: (columns: 1 2 3 2 1, output: isolate, debug: (image: show))
+$susy: (columns: 1 2 3 2 1, output: isolate)
+
+.wrap
+    +container(1140px)
+
+.sidebar-one
+    +span(1 first)
+
+.sidebar-two
+    +span(1 last)
+
+.content
+    +span(3 at 2)
+
+.nest-one
+    +span(1 of (2 3 2) first)
+
+.nest-two
+    +span(2 of (2 3 2) last)
+
+// Demo CSS
+
+.wrap
+    height: 100vh
+
+.sidebar-one, .sidebar-two
+    background: aquamarine
+    height: 40vh
+
+.nest-one, .nest-two
+    background: LavenderBlush
+    height: 80vh
+
+.content
+    background: DarkTurquoise
+    height: 180vh
+
+h2
+    text-align: center

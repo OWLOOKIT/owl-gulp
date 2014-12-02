@@ -1,0 +1,147 @@
+// -- Button 000 --
+//-----------------------------------------------------------------------------
+
+.btn_test
+    color: #FFF
+    background-color: transparent
+    background-image: url("images/bg.png")
+    font-family: Helvetica, Arial, Sans-Serif
+    font-size: 20px
+    text-decoration: none
+    text-shadow: (-1px) -1px 1px #616161
+    position: relative
+    padding: 15px 30px
+    -webkit-box-shadow: 5px 5px 0 #666
+    -moz-box-shadow: 5px 5px 0 #666
+    -webkit-transition: all 0.3s ease
+    -moz-transition: all 0.3s ease
+    margin: 0 10px 0 0
+    &:hover
+        -webkit-box-shadow: 0px 0px 0 #666
+        -moz-box-shadow: 0px 0px 0 #666
+        top: 5px
+        left: 5px
+
+// -- / Button 000 --
+
+// -- Button 001 --
+//-----------------------------------------------------------------------------
+.button
+    text-decoration: none
+    color: white
+    padding: 10px
+    text-transform: uppercase
+    display: inline-block
+    text-shadow: (-2px) 2px 0 rgba(black, 0.2)
+    font-weight: bold
+    padding-right: 50px
+    margin: 10px
+    &.blue
+        +background(linear-gradient(top, #a2d3e9, #7abedf))
+    &.yellow
+        +background(linear-gradient(top, #f2d851, #ecc92b))
+        color: black
+        text-shadow: (-2px) 2px 0 rgba(white, 0.3)
+        box-shadow: (-1px) 0px 1px #d9b826, 0px 1px 1px #b1961d
+        &:after, &:before
+            background: black
+        &:after
+            +filter(drop-shadow((-2px) 0 0 rgba(white, 0.4)))
+        &:before
+            +filter(drop-shadow(0 -2px 0 rgba(white, 0.35)))
+        .arrow
+            +filter(drop-shadow((-2px) 0 0 rgba(white, 0.4)))
+    +transition(all 0.1s linear)
+    +transform(translateZ(0))
+    &:active
+        box-shadow: none
+        +transform(translate3d(-6px, 6px, 0))
+    .arrow
+        +filter(drop-shadow((-2px) 0 0 rgba(black, 0.2)))
+        &:after
+            +filter(drop-shadow((-2px) 0 0 rgba(black, 0.2)))
+    &:after, &:before
+        position: absolute
+        content: " "
+        right: 15px
+        top: 14px
+        width: 6px
+        height: 18px
+        background: white
+        +transform(rotate(-45deg))
+        display: block
+        //z-index:2
+    &:before
+        height: 14px
+        top: 26px
+        right: 16px
+        //z-index:3
+        +transform(rotate(-137deg))
+        +filter(drop-shadow(0 -2px 0 rgba(black, 0.15)))
+
+// -- / Button 001 --
+
+// -- Button 002 --
+// http://codepen.io/heartbox/pen/empmxB
+//-----------------------------------------------------------------------------
+body
+    font-family: "Open Sans", sans-serif
+    background-color: #2d5054
+
+*
+    outline: 0
+
+.Wrapper
+    width: 100%
+    height: 400px
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+.Button
+    margin-bottom: 50px
+    perspective: 600px
+    &.Button--start
+        width: 120px
+        height: 45px
+        button
+            border-radius: 4px
+    &.Button--select
+        width: 60px
+        height: 60px
+        button
+            border-radius: 50%
+
+button
+    position: relative
+    margin: 0
+    padding: 0
+    width: 100%
+    height: 100%
+    border: 0
+    box-shadow: 0px 0px 0px #423847
+    background: radial-gradient(ellipse at center, #5f4c69 0%, #5f4c69 100%)
+    transition: transform 0.15s, box-shadow 0.15s
+    transform: rotateX(0deg) translateY(0)
+    cursor: pointer
+    -webkit-font-smoothing: antialiased
+    &:hover
+        box-shadow: 0px 5px 0px #423847
+        transform: rotateX(30deg) translateY(0)
+    &:hover:active
+        text-shadow: 0 0 4px #3b2d42
+        box-shadow: 0 1px 0 #423847
+        background: radial-gradient(ellipse at center, #9c62ba 0%, #5f4c69 100%)
+        transition: transform 0.05s, box-shadow 0.05s
+        transform: rotateX(30deg) translateY(4px)
+    span
+        position: relative
+        font-size: 14px
+        font-weight: 700
+        font-style: italic
+        color: white
+        text-transform: uppercase
+        transform: translate3d(0, 0, 0)
+
+// -- / Button 002 --
